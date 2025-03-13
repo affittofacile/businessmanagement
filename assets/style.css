@@ -34,6 +34,17 @@ header {
 .stat span {
     font-size: 2em;
     font-weight: bold;
+    color: green; /* Numeri in verde */
+}
+
+.stat span.highlight {
+    animation: flash 1.5s alternate;
+}
+
+@keyframes flash {
+    0% { opacity: 1; }
+    50% { opacity: 0.2; }
+    100% { opacity: 1; }
 }
 
 .hero {
@@ -100,6 +111,12 @@ header {
 
 .service-item:hover {
     transform: scale(1.05);
+}
+
+.service-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
 }
 
 footer {
