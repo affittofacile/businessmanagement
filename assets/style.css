@@ -33,7 +33,7 @@ h2, h3 {
 }
 
 
-#img002 {
+#img006 {
     display: block; /* Necessario per margin: 0 auto; */
     width: 50%; /* Imposta la larghezza al 50% del contenitore */
     height: auto; /* Mantiene le proporzioni dell'immagine */
