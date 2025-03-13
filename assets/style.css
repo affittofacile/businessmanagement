@@ -1,70 +1,33 @@
 body {
     font-family: Arial, sans-serif;
+    background-color: white;
+    color: black;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
 }
 
-header {
-    background: black;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    font-size: 24px;
+h1, .stat p {
+    color: green;
+    font-size: 2em;
+    font-weight: bold;
 }
 
-nav {
-    background: #333;
-    text-align: center;
-    padding: 10px;
+h2, h3 {
+    color: silver;
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    margin: 15px;
-    font-size: 18px;
-    padding: 10px 15px;
+.stat {
     display: inline-block;
-    transition: 0.3s;
-}
-
-nav a:hover {
-    background: #555;
-    border-radius: 5px;
-}
-
-.container {
-    padding: 20px;
+    margin: 10px 20px;
     text-align: center;
 }
 
-.gallery {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-    padding: 20px;
+.highlight {
+    color: green;
+    animation: flash 0.5s alternate 3;
 }
 
-.gallery img {
-    width: 30%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s;
+@keyframes flash {
+    from { opacity: 1; }
+    to { opacity: 0.3; }
 }
-
-.gallery img:hover {
-    transform: scale(1.05);
-}
-
-footer {
-    background: black;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin-top: 20px;
-}
-
