@@ -33,10 +33,11 @@ header {
 }
 
 .hero {
-    background: url('https://via.placeholder.com/1200x400') no-repeat center center/cover;
+    background: url('/assets/images/hero.jpg') no-repeat center center/cover; /* Percorso aggiornato */
     color: #fff;
     padding: 100px 20px;
     text-align: center;
+
 }
 
 .hero h1 {
