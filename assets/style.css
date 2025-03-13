@@ -49,7 +49,7 @@ header {
 
 .hero {
     background: url('/assets/images/hero.jpg') no-repeat center center/cover;
-    color: #fff;
+    color: black;
     padding: 150px 20px;
     text-align: center;
     font-family: 'Montserrat', sans-serif;
