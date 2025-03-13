@@ -36,4 +36,3 @@ document.addEventListener("DOMContentLoaded", function () {
         animateValue("weekly-appointments", parseInt(document.getElementById("weekly-appointments").textContent), fakeData.weeklyAppointments, 1500);
     }, 10000);
 });
-
