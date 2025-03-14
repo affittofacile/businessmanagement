@@ -1,3 +1,24 @@
+// Gestione slideshow
+let slides = document.querySelectorAll(".slide");
+let slideIndex = 0;
+
+function showSlides() {
+    slides.forEach(slide => slide.classList.remove("active")); // Nasconde tutte le immagini
+    slides[slideIndex].classList.add("active"); // Mostra solo l'immagine attuale
+    slideIndex = (slideIndex + 1) % slides.length; // Passa alla successiva
+}
+
+if (slides.length > 0) {
+    slides[0].classList.add("active"); // Mostra la prima immagine all'avvio
+    setInterval(showSlides, 3000); // Cambia immagine ogni 3 secondi
+}
+
+
+
+
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
     function animateValue(id, start, end, duration) {
         let obj = document.getElementById(id);
