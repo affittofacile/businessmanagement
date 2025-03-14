@@ -1,23 +1,18 @@
+<script>
 // Gestione slideshow
 let slides = document.querySelectorAll(".slide");
 let slideIndex = 0;
 
 function showSlides() {
-    slides.forEach(slide => slide.classList.remove("active")); // Nasconde tutte le immagini
-    slides[slideIndex].classList.add("active"); // Mostra solo l'immagine attuale
-    slideIndex = (slideIndex + 1) % slides.length; // Passa alla successiva
+    slides.forEach(slide => slide.classList.remove("active"));
+    slides[slideIndex].classList.add("active");
+    slideIndex = (slideIndex + 1) % slides.length;
 }
 
 if (slides.length > 0) {
-    slides[0].classList.add("active"); // Mostra la prima immagine all'avvio
-    setInterval(showSlides, 3000); // Cambia immagine ogni 3 secondi
+    slides[0].classList.add("active");
+    setInterval(showSlides, 3000);
 }
-
-
-
-
-
-
 
 document.addEventListener("DOMContentLoaded", function () {
     function animateValue(id, start, end, duration) {
@@ -37,19 +32,16 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 10);
     }
 
-    // Simuliamo i dati dinamici
     let fakeData = {
         appointments: Math.floor(Math.random() * 1000 + 500),
         weeklyAppointments: Math.floor(Math.random() * 20 + 5),
         newRental: "Appartamento in centro"
     };
 
-    // Avviamo le animazioni
     animateValue("appointments", 0, fakeData.appointments, 2000);
     animateValue("weekly-appointments", 0, fakeData.weeklyAppointments, 2000);
     document.getElementById("new-rental").textContent = fakeData.newRental;
 
-    // Aggiorna i numeri ogni 10 secondi simulando cambiamenti
     setInterval(() => {
         fakeData.appointments += Math.floor(Math.random() * 10);
         fakeData.weeklyAppointments += Math.floor(Math.random() * 3);
@@ -57,3 +49,4 @@ document.addEventListener("DOMContentLoaded", function () {
         animateValue("weekly-appointments", parseInt(document.getElementById("weekly-appointments").textContent), fakeData.weeklyAppointments, 1500);
     }, 10000);
 });
+</script>
