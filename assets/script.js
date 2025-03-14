@@ -1,4 +1,3 @@
-<script>
 // Gestione slideshow
 let slides = document.querySelectorAll(".slide");
 let slideIndex = 0;
@@ -14,6 +13,7 @@ if (slides.length > 0) {
     setInterval(showSlides, 3000);
 }
 
+// Animazione numeri dinamici
 document.addEventListener("DOMContentLoaded", function () {
     function animateValue(id, start, end, duration) {
         let obj = document.getElementById(id);
@@ -32,21 +32,25 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 10);
     }
 
+    // Simulazione dati dinamici
     let fakeData = {
-        appointments: Math.floor(Math.random() * 1000 + 500),
-        weeklyAppointments: Math.floor(Math.random() * 20 + 5),
-        newRental: "Appartamento in centro"
+        totalRentals: Math.floor(Math.random() * 1000 + 500),
+        monthlyRentals: Math.floor(Math.random() * 20 + 5),
+        weeklyTenants: Math.floor(Math.random() * 10 + 2)
     };
 
-    animateValue("appointments", 0, fakeData.appointments, 2000);
-    animateValue("weekly-appointments", 0, fakeData.weeklyAppointments, 2000);
-    document.getElementById("new-rental").textContent = fakeData.newRental;
+    // Avvio animazioni
+    animateValue("total-rentals", 0, fakeData.totalRentals, 2000);
+    animateValue("monthly-rentals", 0, fakeData.monthlyRentals, 2000);
+    animateValue("weekly-tenants", 0, fakeData.weeklyTenants, 2000);
 
+    // Aggiorna i numeri ogni 10 secondi
     setInterval(() => {
-        fakeData.appointments += Math.floor(Math.random() * 10);
-        fakeData.weeklyAppointments += Math.floor(Math.random() * 3);
-        animateValue("appointments", parseInt(document.getElementById("appointments").textContent), fakeData.appointments, 1500);
-        animateValue("weekly-appointments", parseInt(document.getElementById("weekly-appointments").textContent), fakeData.weeklyAppointments, 1500);
+        fakeData.totalRentals += Math.floor(Math.random() * 10);
+        fakeData.monthlyRentals += Math.floor(Math.random() * 3);
+        fakeData.weeklyTenants += Math.floor(Math.random() * 2);
+        animateValue("total-rentals", parseInt(document.getElementById("total-rentals").textContent), fakeData.totalRentals, 1500);
+        animateValue("monthly-rentals", parseInt(document.getElementById("monthly-rentals").textContent), fakeData.monthlyRentals, 1500);
+        animateValue("weekly-tenants", parseInt(document.getElementById("weekly-tenants").textContent), fakeData.weeklyTenants, 1500);
     }, 10000);
 });
-</script>
