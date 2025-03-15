@@ -13,7 +13,7 @@ if (slides.length > 0) {
     setInterval(showSlides, 3000);
 }
 
-// Simulazione di un database in memoria
+// Database in memoria connesso con Odoo.
 let rentalData = {
     totalRentals: 1200, // Valore iniziale per gli affitti totali
     monthlyRentals: 45,  // Valore iniziale per gli affitti mensili
