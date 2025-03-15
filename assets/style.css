@@ -33,6 +33,45 @@ header {
     color: green;
 }
 
+/* Sezione evidenziata */
+.highlight-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 60px 20px;
+}
+
+.highlight-container {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 800px;
+    width: 100%;
+}
+
+.highlight-container h2 {
+    font-size: 2.5em;
+    font-weight: bold;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.highlight-container .underline {
+    text-decoration: underline;
+    text-decoration-color: #c29f62;
+    text-decoration-thickness: 3px;
+}
+
+.highlight-container p {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 0;
+}
+
 /* Sezione Contatti */
 .contact-section {
     background-color: #f4f4f4;
@@ -91,69 +130,16 @@ header {
 }
 
 .whatsapp-button {
-    background-color: #25d366; /* Colore di WhatsApp */
+    background-color: #25d366;
     color: white;
 }
 
 .whatsapp-button:hover {
-    background-color: #128c7e; /* Colore di WhatsApp più scuro */
+    background-color: #128c7e;
     transform: scale(1.05);
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .contact-buttons {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .contact-button {
-        width: 100%;
-    }
-}
-
-
-
-
-/* Sezione evidenziata */
-.highlight-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f9f9f9; /* Sfondo grigio chiaro */
-    padding: 60px 20px;
-}
-
-.highlight-container {
-    background: white;
-    padding: 40px;
-    border-radius: 10px; /* Bordi arrotondati */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Ombra */
-    text-align: center;
-    max-width: 800px; /* Larghezza massima */
-    width: 100%;
-}
-
-.highlight-container h2 {
-    font-size: 2.5em;
-    font-weight: bold;
-    line-height: 1.4;
-    margin-bottom: 20px;
-    color: #333; /* Colore del testo */
-}
-
-.highlight-container .underline {
-    text-decoration: underline;
-    text-decoration-color: #c29f62; /* Colore dell'underline */
-    text-decoration-thickness: 3px; /* Spessore dell'underline */
-}
-
-.highlight-container p {
-    font-size: 1.2em;
-    color: #666; /* Colore del testo più chiaro */
-    margin-bottom: 0; /* Rimuove il margine inferiore */
-}
-
+/* Hero Section */
 .hero {
     position: relative;
     color: white;
@@ -224,6 +210,7 @@ header {
     background: #a7894d;
 }
 
+/* Services Section */
 .services {
     padding: 60px 20px;
     text-align: center;
@@ -263,6 +250,7 @@ header {
     border-radius: 5px;
 }
 
+/* Footer */
 footer {
     background: #222;
     color: #fff;
@@ -318,5 +306,14 @@ footer {
 
     .footer-content {
         flex-direction: column;
+    }
+
+    .contact-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .contact-button {
+        width: 100%;
     }
 }
