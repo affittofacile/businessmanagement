@@ -36,60 +36,40 @@ header {
 /* Sezione evidenziata */
 .highlight-section {
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
-    background-color: #2e8b57; /* Verde */
+    background-color: #f9f9f9; /* Sfondo grigio chiaro */
     padding: 60px 20px;
-    color: white;
 }
 
-.highlight-content {
-    max-width: 50%;
+.highlight-container {
+    background: white;
+    padding: 40px;
+    border-radius: 10px; /* Bordi arrotondati */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Ombra */
+    text-align: center;
+    max-width: 800px; /* Larghezza massima */
+    width: 100%;
 }
 
-.highlight-content h2 {
+.highlight-container h2 {
     font-size: 2.5em;
     font-weight: bold;
     line-height: 1.4;
     margin-bottom: 20px;
+    color: #333; /* Colore del testo */
 }
 
-.highlight-content .underline {
+.highlight-container .underline {
     text-decoration: underline;
     text-decoration-color: #c29f62; /* Colore dell'underline */
     text-decoration-thickness: 3px; /* Spessore dell'underline */
 }
 
-.highlight-content p {
+.highlight-container p {
     font-size: 1.2em;
-    margin-bottom: 20px;
-}
-
-.highlight-content .cta-button {
-    background: #c29f62;
-    color: white;
-    padding: 12px 25px;
-    text-decoration: none;
-    font-size: 1.1em;
-    border-radius: 8px;
-    transition: background 0.3s;
-}
-
-.highlight-content .cta-button:hover {
-    background: #a7894d;
-}
-
-.highlight-image {
-    max-width: 40%;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.highlight-image img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    color: #666; /* Colore del testo più chiaro */
+    margin-bottom: 0; /* Rimuove il margine inferiore */
 }
 
 .hero {
@@ -238,23 +218,8 @@ footer {
         gap: 5px;
     }
 
-    .highlight-section {
-        flex-direction: column;
-        text-align: center;
-        padding: 40px 20px;
-    }
-
-    .highlight-content {
-        max-width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .highlight-content h2 {
+    .highlight-container h2 {
         font-size: 2em;
-    }
-
-    .highlight-image {
-        max-width: 100%;
     }
 
     .hero h1 {
