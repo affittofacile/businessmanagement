@@ -15,9 +15,9 @@ if (slides.length > 0) {
 
 // Database in memoria connesso con Odoo.
 let rentalData = {
-    totalRentals: 80,   // Valore iniziale per gli affitti totali
-    monthlyRentals: 5,  // Valore iniziale per gli affitti mensili
-    weeklyTenants: 2    // Valore iniziale per gli affittuari settimanali
+    totalRentals: 1296,   // Valore iniziale per gli affitti totali
+    monthlyRentals: 8,    // Valore iniziale per le locazioni attive questo mese
+    weeklyTenants: 11     // Valore iniziale per gli affittuari settimanali
 };
 
 // Carica i dati salvati nel localStorage (se presenti)
@@ -33,11 +33,11 @@ function updateRentalData() {
     // Incrementa i valori in modo realistico
     rentalData.totalRentals += Math.floor(Math.random() * 2); // Incremento casuale tra 0 e 1
     rentalData.monthlyRentals += Math.floor(Math.random() * 2); // Incremento casuale tra 0 e 1
-    rentalData.weeklyTenants += Math.floor(Math.random() * 2); // Incremento casuale tra 0 e 1
+    rentalData.weeklyTenants += Math.floor(Math.random() * 3); // Incremento casuale tra 0 e 2
 
     // Limiti massimi basati su 8 case
     if (rentalData.monthlyRentals > 8) rentalData.monthlyRentals = 8;
-    if (rentalData.weeklyTenants > 8) rentalData.weeklyTenants = 8;
+    if (rentalData.weeklyTenants > 15) rentalData.weeklyTenants = 15; // Aumentato il limite per gli affittuari settimanali
 
     // Salva i dati aggiornati nel localStorage
     localStorage.setItem("rentalData", JSON.stringify(rentalData));
