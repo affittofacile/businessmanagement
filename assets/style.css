@@ -33,6 +33,88 @@ header {
     color: green;
 }
 
+/* Sezione Contatti */
+.contact-section {
+    background-color: #f4f4f4;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-container h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.contact-container p {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.contact-button {
+    padding: 15px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-button span {
+    margin-left: 10px;
+}
+
+.phone-button {
+    background-color: #c29f62;
+    color: white;
+}
+
+.phone-button:hover {
+    background-color: #a7894d;
+    transform: scale(1.05);
+}
+
+.whatsapp-button {
+    background-color: #25d366; /* Colore di WhatsApp */
+    color: white;
+}
+
+.whatsapp-button:hover {
+    background-color: #128c7e; /* Colore di WhatsApp più scuro */
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .contact-button {
+        width: 100%;
+    }
+}
+
+
+
+
 /* Sezione evidenziata */
 .highlight-section {
     display: flex;
