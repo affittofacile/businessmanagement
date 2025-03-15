@@ -32,25 +32,23 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 10);
     }
 
-    // Simulazione dati dinamici
-    let fakeData = {
-        totalRentals: Math.floor(Math.random() * 1000 + 500),
-        monthlyRentals: Math.floor(Math.random() * 20 + 5),
-        weeklyTenants: Math.floor(Math.random() * 10 + 2)
+    // Simulazione dati dinamici (OdooDBlink)
+    let OdooDBlink = {
+        appointments: Math.floor(Math.random() * 1000 + 500),
+        weeklyAppointments: Math.floor(Math.random() * 20 + 5),
+        newRental: "Appartamento in centro"
     };
 
     // Avvio animazioni
-    animateValue("total-rentals", 0, fakeData.totalRentals, 2000);
-    animateValue("monthly-rentals", 0, fakeData.monthlyRentals, 2000);
-    animateValue("weekly-tenants", 0, fakeData.weeklyTenants, 2000);
+    animateValue("appointments", 0, OdooDBlink.appointments, 2000);
+    animateValue("weekly-appointments", 0, OdooDBlink.weeklyAppointments, 2000);
+    document.getElementById("new-rental").textContent = OdooDBlink.newRental;
 
     // Aggiorna i numeri ogni 10 secondi
     setInterval(() => {
-        fakeData.totalRentals += Math.floor(Math.random() * 10);
-        fakeData.monthlyRentals += Math.floor(Math.random() * 3);
-        fakeData.weeklyTenants += Math.floor(Math.random() * 2);
-        animateValue("total-rentals", parseInt(document.getElementById("total-rentals").textContent), fakeData.totalRentals, 1500);
-        animateValue("monthly-rentals", parseInt(document.getElementById("monthly-rentals").textContent), fakeData.monthlyRentals, 1500);
-        animateValue("weekly-tenants", parseInt(document.getElementById("weekly-tenants").textContent), fakeData.weeklyTenants, 1500);
+        OdooDBlink.appointments += Math.floor(Math.random() * 10);
+        OdooDBlink.weeklyAppointments += Math.floor(Math.random() * 3);
+        animateValue("appointments", parseInt(document.getElementById("appointments").textContent), OdooDBlink.appointments, 1500);
+        animateValue("weekly-appointments", parseInt(document.getElementById("weekly-appointments").textContent), OdooDBlink.weeklyAppointments, 1500);
     }, 10000);
 });
