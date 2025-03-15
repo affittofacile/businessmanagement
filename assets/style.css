@@ -53,6 +53,7 @@ header {
     overflow: hidden;
 }
 
+/* Slideshow container */
 .slideshow-container {
     position: absolute;
     top: 0;
@@ -60,10 +61,14 @@ header {
     width: 100%;
     height: 100%;
     z-index: 1;
+    overflow: hidden; /* Nasconde eventuali parti dell'immagine che fuoriescono */
 }
 
+/* Immagini dello slideshow */
 .slide {
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover; /* Fa sì che l'immagine copra tutto il contenitore */
@@ -74,6 +79,7 @@ header {
 
 .slide.active {
     opacity: 1;
+
 }
 
 .hero-content {
