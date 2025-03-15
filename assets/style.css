@@ -1,3 +1,137 @@
+/* Stile per la pagina "Chi Siamo" */
+.about-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.about-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-container h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.about-container p {
+    font-size: 1.2em;
+    color: #666;
+    line-height: 1.8;
+}
+
+/* Stile per la pagina "Contatti" */
+.contact-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-container h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.contact-container p {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.contact-info {
+    text-align: left;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    color: #333;
+}
+
+.contact-info strong {
+    color: #c29f62;
+}
+
+/* Stile per la pagina "Servizi" */
+.services-page {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.services-page h1 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.service-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.service-item {
+    background: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    width: 30%;
+    transition: transform 0.3s;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.service-item:hover {
+    transform: scale(1.05);
+}
+
+.service-item h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.service-item p {
+    font-size: 1.1em;
+    color: #666;
+    line-height: 1.6;
+}
+
+.service-description {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.service-description p {
+    font-size: 1.2em;
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.service-description strong {
+    color: #c29f62;
+}
+
 /* Stili generali */
 body {
     font-family: Arial, sans-serif;
@@ -35,6 +169,11 @@ header {
     color: #666;
 }
 
+.stats-bar span {
+    color: green; /* Colore verde per i numeri */
+    font-weight: bold;
+}
+
 /* Sezione evidenziata */
 .highlight-section {
     background-color: #f4f4f4;
@@ -70,10 +209,13 @@ header {
     position: relative;
     max-width: 100%;
     overflow: hidden;
+    height: 400px; /* Altezza fissa per il contenitore dello slideshow */
 }
 
 .slide {
     width: 100%;
+    height: 100%;
+    object-fit: cover; /* Mantiene le immagini proporzionali */
     display: none;
 }
 
@@ -149,62 +291,6 @@ header {
     font-size: 1.1em;
     color: #666;
     line-height: 1.6;
-}
-
-/* Sezione contatti */
-.contact-section {
-    padding: 60px 20px;
-    text-align: center;
-    background-color: #fff;
-}
-
-.contact-container {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.contact-info {
-    text-align: left;
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f4f4f4;
-    border-radius: 8px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.contact-info p {
-    margin-bottom: 10px;
-    font-size: 1.1em;
-    color: #333;
-}
-
-.contact-info strong {
-    color: #c29f62;
-}
-
-/* Sezione chi siamo */
-.about-section {
-    padding: 60px 20px;
-    text-align: center;
-    background-color: #fff;
-}
-
-.about-container {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.about-container h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-.about-container p {
-    font-size: 1.2em;
-    color: #666;
-    line-height: 1.8;
 }
 
 /* Footer */
