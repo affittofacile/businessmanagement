@@ -15,9 +15,9 @@ if (slides.length > 0) {
 
 // Database in memoria connesso con Odoo.
 let rentalData = {
-    totalRentals: 1200, // Valore iniziale per gli affitti totali
-    monthlyRentals: 45,  // Valore iniziale per gli affitti mensili
-    weeklyTenants: 12    // Valore iniziale per gli affittuari settimanali
+    totalRentals: 894, // Valore iniziale per gli affitti totali
+    monthlyRentals: 29,  // Valore iniziale per gli affitti mensili
+    weeklyTenants: 9    // Valore iniziale per gli affittuari settimanali
 };
 
 // Carica i dati salvati nel localStorage (se presenti)
