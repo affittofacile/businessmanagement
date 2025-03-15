@@ -445,6 +445,7 @@ footer {
     border-radius: 8px; /* Bordi arrotondati */
     margin: 20px auto; /* Spaziatura e centratura */
     max-width: 800px; /* Limita la larghezza */
+    color: #333; /* Testo nero */
 }
 
 .stats-bar span {
