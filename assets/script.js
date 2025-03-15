@@ -34,21 +34,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Simulazione dati dinamici (OdooDBlink)
     let OdooDBlink = {
-        appointments: Math.floor(Math.random() * 1000 + 500),
-        weeklyAppointments: Math.floor(Math.random() * 20 + 5),
-        newRental: "Appartamento in centro"
+        totalRentals: Math.floor(Math.random() * 1000 + 500),
+        monthlyRentals: Math.floor(Math.random() * 20 + 5),
+        weeklyTenants: Math.floor(Math.random() * 10 + 2)
     };
 
     // Avvio animazioni
-    animateValue("appointments", 0, OdooDBlink.appointments, 2000);
-    animateValue("weekly-appointments", 0, OdooDBlink.weeklyAppointments, 2000);
-    document.getElementById("new-rental").textContent = OdooDBlink.newRental;
+    animateValue("total-rentals", 0, OdooDBlink.totalRentals, 2000);
+    animateValue("monthly-rentals", 0, OdooDBlink.monthlyRentals, 2000);
+    animateValue("weekly-tenants", 0, OdooDBlink.weeklyTenants, 2000);
 
     // Aggiorna i numeri ogni 10 secondi
     setInterval(() => {
-        OdooDBlink.appointments += Math.floor(Math.random() * 10);
-        OdooDBlink.weeklyAppointments += Math.floor(Math.random() * 3);
-        animateValue("appointments", parseInt(document.getElementById("appointments").textContent), OdooDBlink.appointments, 1500);
-        animateValue("weekly-appointments", parseInt(document.getElementById("weekly-appointments").textContent), OdooDBlink.weeklyAppointments, 1500);
+        OdooDBlink.totalRentals += Math.floor(Math.random() * 10);
+        OdooDBlink.monthlyRentals += Math.floor(Math.random() * 3);
+        OdooDBlink.weeklyTenants += Math.floor(Math.random() * 2);
+        animateValue("total-rentals", parseInt(document.getElementById("total-rentals").textContent), OdooDBlink.totalRentals, 1500);
+        animateValue("monthly-rentals", parseInt(document.getElementById("monthly-rentals").textContent), OdooDBlink.monthlyRentals, 1500);
+        animateValue("weekly-tenants", parseInt(document.getElementById("weekly-tenants").textContent), OdooDBlink.weeklyTenants, 1500);
     }, 10000);
 });
