@@ -159,6 +159,9 @@ header {
     z-index: 2;
     text-align: center;
     color: white;
+    background-color: rgba(0, 0, 0, 0.7); /* Rettangolo nero sotto il testo */
+    padding: 20px;
+    border-radius: 8px;
 }
 
 .hero h1 {
@@ -317,6 +320,15 @@ footer {
     margin-bottom: 10px;
     font-size: 1.3em;
     font-family: 'Playfair Display', serif;
+}
+
+.footer-section p {
+    margin: 5px 0;
+}
+
+.footer-section a {
+    color: #c29f62;
+    text-decoration: none;
 }
 
 .footer-bottom {
