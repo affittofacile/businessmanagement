@@ -1,82 +1,121 @@
-/* Stile per la pagina "Chi Siamo" */
-.about-section {
-    padding: 60px 20px;
-    text-align: center;
-    background-color: #fff;
-}
-
-.about-container {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.about-container h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
+/* Stili generali */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
     color: #333;
 }
 
-.about-container p {
-    font-size: 1.2em;
-    color: #666;
-    line-height: 1.8;
-}
-
-/* Stile per la pagina "Contatti" */
-.contact-section {
-    padding: 60px 20px;
-    text-align: center;
+header {
     background-color: #fff;
-}
-
-.contact-container {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.contact-container h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-.contact-container p {
-    font-size: 1.2em;
-    color: #666;
-    margin-bottom: 20px;
-}
-
-.contact-info {
-    text-align: left;
-    max-width: 400px;
-    margin: 0 auto;
     padding: 20px;
-    background-color: #f4f4f4;
-    border-radius: 8px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.contact-info p {
-    margin-bottom: 10px;
-    font-size: 1.1em;
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.stats-bar {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* Sezione evidenziata */
+.highlight-section {
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.highlight-content {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.highlight-text h2 {
+    font-size: 2em;
     color: #333;
 }
 
-.contact-info strong {
-    color: #c29f62;
+.highlight-icon img {
+    max-width: 100px;
 }
 
-/* Stile per la pagina "Servizi" */
-.services-page {
+/* Sezione hero */
+.hero {
+    position: relative;
+    text-align: center;
+    color: #fff;
+}
+
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.slide {
+    width: 100%;
+    display: none;
+}
+
+.slide.active {
+    display: block;
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.hero-content h1 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    margin: 10px 0 0;
+}
+
+.cta-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #c29f62;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Sezione servizi */
+.services {
     padding: 60px 20px;
     text-align: center;
     background-color: #fff;
-}
-
-.services-page h1 {
-    font-size: 2.5em;
-    margin-bottom: 30px;
-    color: #333;
 }
 
 .service-list {
@@ -100,7 +139,7 @@
     transform: scale(1.05);
 }
 
-.service-item h2 {
+.service-item h3 {
     font-size: 1.8em;
     margin-bottom: 10px;
     color: #333;
@@ -112,8 +151,21 @@
     line-height: 1.6;
 }
 
-.service-description {
+/* Sezione contatti */
+.contact-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.contact-container {
     max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-info {
+    text-align: left;
+    max-width: 400px;
     margin: 0 auto;
     padding: 20px;
     background-color: #f4f4f4;
@@ -121,18 +173,83 @@
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.service-description p {
-    font-size: 1.2em;
-    color: #666;
-    line-height: 1.8;
-    margin-bottom: 20px;
+.contact-info p {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    color: #333;
 }
 
-.service-description strong {
+.contact-info strong {
     color: #c29f62;
 }
 
-/* Responsive Design per le nuove pagine */
+/* Sezione chi siamo */
+.about-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.about-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-container h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.about-container p {
+    font-size: 1.2em;
+    color: #666;
+    line-height: 1.8;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 10px;
+    min-width: 200px;
+}
+
+.footer-section h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.footer-section p {
+    margin: 5px 0;
+}
+
+.footer-section a {
+    color: #c29f62;
+    text-decoration: none;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #ccc;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
     .service-item {
         width: 100%;
@@ -140,5 +257,19 @@
 
     .contact-info, .service-description {
         padding: 15px;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .highlight-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .highlight-icon img {
+        margin-top: 20px;
     }
 }
