@@ -38,47 +38,48 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f4f4f4; /* Sfondo grigio chiaro */
-    padding: 100px 20px; /* Aumenta il padding per dare più spazio */
-    min-height: 100vh; /* Altezza a tutto schermo */
+    background-color: #f4f4f4;
+    padding: 100px 20px;
+    min-height: 100vh;
 }
 
 .highlight-content {
-    text-align: center;
-    max-width: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
     width: 100%;
+    gap: 40px;
 }
 
-.highlight-content h2 {
+.highlight-text {
+    text-align: left;
+    max-width: 600px;
+}
+
+.highlight-text h2 {
     font-size: 2.5em;
     font-weight: bold;
     line-height: 1.4;
     margin-bottom: 20px;
     color: #333;
-    animation: fadeIn 2s ease-in-out; /* Animazione di dissolvenza */
 }
 
-.highlight-content .underline {
+.highlight-text .underline {
     text-decoration: underline;
     text-decoration-color: #c29f62;
     text-decoration-thickness: 3px;
 }
 
-.highlight-content p {
-    font-size: 1.2em;
-    color: #666;
-    margin-bottom: 0;
-    animation: fadeIn 2.5s ease-in-out; /* Animazione di dissolvenza */
+.highlight-icon img {
+    width: 150px; /* Dimensione dell'icona */
+    height: auto;
+    opacity: 0.8; /* Trasparenza per un effetto più delicato */
+    transition: transform 0.3s ease-in-out;
 }
 
-/* Animazione di dissolvenza */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+.highlight-icon img:hover {
+    transform: scale(1.1); /* Effetto hover */
 }
 
 /* Hero Section */
@@ -297,8 +298,17 @@ footer {
         gap: 5px;
     }
 
-    .highlight-content h2 {
-        font-size: 2em;
+    .highlight-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .highlight-text {
+        text-align: center;
+    }
+
+    .highlight-icon {
+        margin-top: 20px;
     }
 
     .hero h1 {
