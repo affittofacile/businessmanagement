@@ -15,9 +15,9 @@ if (slides.length > 0) {
 
 // Database in memoria connesso con Odoo.
 let rentalData = {
-    totalRentals: 0,       // Parte da 0 e aumenta gradualmente
-    availableUnits: 8,     // Fisso a 8
-    weeklyTenants: 0       // Parte da 0 e aumenta gradualmente
+    totalRentals: 450,   // Valore iniziale per gli affitti totali
+    availableUnits: 9,   // Valore fisso per le unità disponibili
+    weeklyTenants: 8     // Valore iniziale per gli affittuari settimanali
 };
 
 // Carica i dati salvati nel localStorage (se presenti)
@@ -28,14 +28,13 @@ if (localStorage.getItem("rentalData")) {
     localStorage.setItem("rentalData", JSON.stringify(rentalData));
 }
 
-// Funzione per aggiornare i numeri in modo logico
+// Funzione per aggiornare i numeri in modo casuale
 function updateRentalData() {
-    // Incrementa gli affitti settimanali in modo casuale (tra 0 e 1)
-    const newWeeklyTenants = Math.floor(Math.random() * 2); // Incremento casuale tra 0 e 1
-    rentalData.weeklyTenants = Math.min(11, rentalData.weeklyTenants + newWeeklyTenants);
+    // Simula un movimento casuale per gli affitti totali annui (tra 400 e 528)
+    rentalData.totalRentals = Math.min(528, Math.max(400, rentalData.totalRentals + Math.floor(Math.random() * 5) - 2));
 
-    // Calcola gli affitti totali in modo coerente
-    rentalData.totalRentals = Math.min(528, rentalData.totalRentals + newWeeklyTenants);
+    // Simula un movimento casuale per gli affitti settimanali (tra 5 e 11)
+    rentalData.weeklyTenants = Math.min(11, Math.max(5, rentalData.weeklyTenants + Math.floor(Math.random() * 3) - 1));
 
     // Salva i dati aggiornati nel localStorage
     localStorage.setItem("rentalData", JSON.stringify(rentalData));
@@ -62,7 +61,7 @@ function animateValue(id, start, end, duration) {
 // Aggiorna i numeri visualizzati
 function updateDisplay() {
     animateValue("total-rentals", 0, rentalData.totalRentals, 2000);
-    animateValue("available-units", 0, rentalData.availableUnits, 2000);
+    document.getElementById("available-units").textContent = rentalData.availableUnits; // Valore fisso
     animateValue("weekly-tenants", 0, rentalData.weeklyTenants, 2000);
 }
 
