@@ -15,9 +15,9 @@ if (slides.length > 0) {
 
 // Database in memoria connesso con Odoo.
 let rentalData = {
-    totalRentals: 130,   // Valore iniziale per gli affitti totali
-    availableUnits: 8,   // Valore iniziale per le unità disponibili (stanze/case)
-    weeklyTenants: 15    // Valore iniziale per gli affittuari settimanali
+    totalRentals: 0,       // Parte da 0 e aumenta gradualmente
+    availableUnits: 8,     // Fisso a 8
+    weeklyTenants: 0       // Parte da 0 e aumenta gradualmente
 };
 
 // Carica i dati salvati nel localStorage (se presenti)
@@ -30,15 +30,12 @@ if (localStorage.getItem("rentalData")) {
 
 // Funzione per aggiornare i numeri in modo logico
 function updateRentalData() {
-    // Incrementa gli affitti settimanali in modo casuale (tra 0 e 2)
-    const newWeeklyTenants = Math.floor(Math.random() * 3); // Incremento casuale tra 0 e 2
-    rentalData.weeklyTenants += newWeeklyTenants;
+    // Incrementa gli affitti settimanali in modo casuale (tra 0 e 1)
+    const newWeeklyTenants = Math.floor(Math.random() * 2); // Incremento casuale tra 0 e 1
+    rentalData.weeklyTenants = Math.min(11, rentalData.weeklyTenants + newWeeklyTenants);
 
     // Calcola gli affitti totali in modo coerente
-    rentalData.totalRentals += newWeeklyTenants * 4; // Ogni affitto settimanale contribuisce per 4 settimane al totale annuo
-
-    // Le unità disponibili rimangono fisse (es. 8), a meno che non vengano aggiunte o rimosse proprietà
-    // Se vuoi simulare variazioni, puoi aggiungere una logica qui (es. rentalData.availableUnits += 1;)
+    rentalData.totalRentals = Math.min(528, rentalData.totalRentals + newWeeklyTenants);
 
     // Salva i dati aggiornati nel localStorage
     localStorage.setItem("rentalData", JSON.stringify(rentalData));
@@ -69,11 +66,11 @@ function updateDisplay() {
     animateValue("weekly-tenants", 0, rentalData.weeklyTenants, 2000);
 }
 
-// Aggiorna i dati e la visualizzazione ogni 10 secondi
+// Aggiorna i dati e la visualizzazione ogni 1 minuto
 setInterval(() => {
     updateRentalData();
     updateDisplay();
-}, 10000);
+}, 60000); // 60.000 millisecondi = 1 minuto
 
 // Inizializza la visualizzazione al caricamento della pagina
 document.addEventListener("DOMContentLoaded", function () {
