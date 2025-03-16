@@ -15,9 +15,9 @@ if (slides.length > 0) {
 
 // Database in memoria connesso con Odoo.
 let rentalData = {
-    totalRentals: 450,   // Valore iniziale per gli affitti totali
+    totalRentals: 216,   // Valore iniziale per gli affitti totali (6 × 4 × 9)
     availableUnits: 9,   // Valore fisso per le unità disponibili
-    weeklyTenants: 8     // Valore iniziale per gli affittuari settimanali
+    weeklyTenants: 6     // Valore iniziale per gli affittuari settimanali
 };
 
 // Carica i dati salvati nel localStorage (se presenti)
@@ -30,11 +30,11 @@ if (localStorage.getItem("rentalData")) {
 
 // Funzione per aggiornare i numeri in modo casuale
 function updateRentalData() {
-    // Simula un movimento casuale per gli affitti totali annui (tra 400 e 528)
-    rentalData.totalRentals = Math.min(528, Math.max(400, rentalData.totalRentals + Math.floor(Math.random() * 5) - 2));
-
     // Simula un movimento casuale per gli affitti settimanali (tra 5 e 11)
     rentalData.weeklyTenants = Math.min(11, Math.max(5, rentalData.weeklyTenants + Math.floor(Math.random() * 3) - 1));
+
+    // Calcola gli affitti totali annui in modo coerente
+    rentalData.totalRentals = rentalData.weeklyTenants * 4 * 12;
 
     // Salva i dati aggiornati nel localStorage
     localStorage.setItem("rentalData", JSON.stringify(rentalData));
@@ -43,6 +43,10 @@ function updateRentalData() {
 // Funzione per animare i numeri
 function animateValue(id, start, end, duration) {
     let obj = document.getElementById(id);
+    if (!obj) {
+        console.error("Elemento non trovato:", id);
+        return;
+    }
     let range = end - start;
     let current = start;
     let increment = range / (duration / 10);
@@ -61,7 +65,15 @@ function animateValue(id, start, end, duration) {
 // Aggiorna i numeri visualizzati
 function updateDisplay() {
     animateValue("total-rentals", 0, rentalData.totalRentals, 2000);
-    document.getElementById("available-units").textContent = rentalData.availableUnits; // Valore fisso
+
+    // Aggiorna le unità disponibili (valore fisso)
+    const availableUnitsElement = document.getElementById("available-units");
+    if (availableUnitsElement) {
+        availableUnitsElement.textContent = rentalData.availableUnits;
+    } else {
+        console.error("Elemento 'available-units' non trovato!");
+    }
+
     animateValue("weekly-tenants", 0, rentalData.weeklyTenants, 2000);
 }
 
@@ -73,5 +85,8 @@ setInterval(() => {
 
 // Inizializza la visualizzazione al caricamento della pagina
 document.addEventListener("DOMContentLoaded", function () {
+    console.log("DOM completamente caricato");
     updateDisplay();
 });
+
+console.log("Script caricato correttamente!");
