@@ -15,9 +15,9 @@ if (slides.length > 0) {
 
 // Database in memoria connesso con Odoo.
 let rentalData = {
-    totalRentals: 3888,   // Correzione del calcolo (9 × 4 × 9 × 12)
+    totalRentals: 1296,   // Correzione del calcolo basato su affittuari singoli (9 × 3 × 4 × 12)
     availableUnits: 9,   // Valore fisso per le unità disponibili
-    weeklyTenants: 9     // Valore aggiornato per gli affittuari settimanali
+    weeklyTenants: 27    // Valore aggiornato per gli affittuari settimanali
 };
 
 // Carica i dati salvati nel localStorage (se presenti)
@@ -30,11 +30,14 @@ if (localStorage.getItem("rentalData")) {
 
 // Funzione per aggiornare i numeri in modo casuale
 function updateRentalData() {
-    // Simula un movimento casuale per gli affitti settimanali (tra 7 e 11)
-    rentalData.weeklyTenants = Math.min(11, Math.max(7, rentalData.weeklyTenants + Math.floor(Math.random() * 3) - 1));
+    // Numero medio di persone per unità (tra 1 e 5)
+    let avgPeoplePerUnit = Math.floor(Math.random() * 5) + 1;
+    
+    // Calcola gli affitti settimanali totali considerando le persone
+    rentalData.weeklyTenants = rentalData.availableUnits * avgPeoplePerUnit;
 
     // Calcola gli affitti totali annui in modo coerente
-    rentalData.totalRentals = rentalData.weeklyTenants * 4 * rentalData.availableUnits * 12;
+    rentalData.totalRentals = rentalData.weeklyTenants * 4 * 12;
 
     // Salva i dati aggiornati nel localStorage
     localStorage.setItem("rentalData", JSON.stringify(rentalData));
