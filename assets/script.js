@@ -15,9 +15,9 @@ if (slides.length > 0) {
 
 // Database in memoria connesso con Odoo.
 let rentalData = {
-    totalRentals: 1296,   // Valore iniziale per gli affitti totali
-    monthlyRentals: 8,    // Valore iniziale per le locazioni attive questo mese
-    weeklyTenants: 11     // Valore iniziale per gli affittuari settimanali
+    totalRentals: 130,   // Valore iniziale per gli affitti totali
+    activeRentals: 8,    // Valore iniziale per le locazioni attive
+    weeklyTenants: 15    // Valore iniziale per gli affittuari settimanali
 };
 
 // Carica i dati salvati nel localStorage (se presenti)
@@ -31,13 +31,12 @@ if (localStorage.getItem("rentalData")) {
 // Funzione per aggiornare i numeri in modo logico
 function updateRentalData() {
     // Incrementa i valori in modo realistico
-    rentalData.totalRentals += Math.floor(Math.random() * 2); // Incremento casuale tra 0 e 1
-    rentalData.monthlyRentals += Math.floor(Math.random() * 2); // Incremento casuale tra 0 e 1
-    rentalData.weeklyTenants += Math.floor(Math.random() * 3); // Incremento casuale tra 0 e 2
+    const newWeeklyTenants = Math.floor(Math.random() * 3); // Incremento casuale tra 0 e 2
+    rentalData.weeklyTenants += newWeeklyTenants;
 
-    // Limiti massimi basati su 8 case
-    if (rentalData.monthlyRentals > 8) rentalData.monthlyRentals = 8;
-    if (rentalData.weeklyTenants > 15) rentalData.weeklyTenants = 15; // Aumentato il limite per gli affittuari settimanali
+    // Calcola gli affitti mensili e totali in modo coerente
+    rentalData.activeRentals = Math.min(8, rentalData.activeRentals + Math.floor(Math.random() * 2)); // Massimo 8 locazioni attive
+    rentalData.totalRentals += newWeeklyTenants * 4; // Ogni affitto settimanale contribuisce per 4 settimane al totale annuo
 
     // Salva i dati aggiornati nel localStorage
     localStorage.setItem("rentalData", JSON.stringify(rentalData));
@@ -64,7 +63,7 @@ function animateValue(id, start, end, duration) {
 // Aggiorna i numeri visualizzati
 function updateDisplay() {
     animateValue("total-rentals", 0, rentalData.totalRentals, 2000);
-    animateValue("monthly-rentals", 0, rentalData.monthlyRentals, 2000);
+    animateValue("active-rentals", 0, rentalData.activeRentals, 2000);
     animateValue("weekly-tenants", 0, rentalData.weeklyTenants, 2000);
 }
 
