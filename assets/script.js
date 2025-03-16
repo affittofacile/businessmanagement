@@ -16,7 +16,7 @@ if (slides.length > 0) {
 // Database in memoria connesso con Odoo.
 let rentalData = {
     totalRentals: 130,   // Valore iniziale per gli affitti totali
-    activeRentals: 8,    // Valore iniziale per le locazioni attive
+    availableUnits: 8,   // Valore iniziale per le unità disponibili (stanze/case)
     weeklyTenants: 15    // Valore iniziale per gli affittuari settimanali
 };
 
@@ -30,13 +30,15 @@ if (localStorage.getItem("rentalData")) {
 
 // Funzione per aggiornare i numeri in modo logico
 function updateRentalData() {
-    // Incrementa i valori in modo realistico
+    // Incrementa gli affitti settimanali in modo casuale (tra 0 e 2)
     const newWeeklyTenants = Math.floor(Math.random() * 3); // Incremento casuale tra 0 e 2
     rentalData.weeklyTenants += newWeeklyTenants;
 
-    // Calcola gli affitti mensili e totali in modo coerente
-    rentalData.activeRentals = Math.min(8, rentalData.activeRentals + Math.floor(Math.random() * 2)); // Massimo 8 locazioni attive
+    // Calcola gli affitti totali in modo coerente
     rentalData.totalRentals += newWeeklyTenants * 4; // Ogni affitto settimanale contribuisce per 4 settimane al totale annuo
+
+    // Le unità disponibili rimangono fisse (es. 8), a meno che non vengano aggiunte o rimosse proprietà
+    // Se vuoi simulare variazioni, puoi aggiungere una logica qui (es. rentalData.availableUnits += 1;)
 
     // Salva i dati aggiornati nel localStorage
     localStorage.setItem("rentalData", JSON.stringify(rentalData));
@@ -63,7 +65,7 @@ function animateValue(id, start, end, duration) {
 // Aggiorna i numeri visualizzati
 function updateDisplay() {
     animateValue("total-rentals", 0, rentalData.totalRentals, 2000);
-    animateValue("active-rentals", 0, rentalData.activeRentals, 2000);
+    animateValue("available-units", 0, rentalData.availableUnits, 2000);
     animateValue("weekly-tenants", 0, rentalData.weeklyTenants, 2000);
 }
 
