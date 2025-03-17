@@ -77,13 +77,16 @@ document.addEventListener("DOMContentLoaded", function () {
 // Aggiornamento HTML con titolo, descrizione e icone
 document.addEventListener("DOMContentLoaded", function () {
     let statsBar = document.querySelector(".stats-bar p");
+
+    // Genera il contenuto della barra delle statistiche con le icone
     statsBar.innerHTML = `
-        <strong>Statistiche Affitti</strong><br>
+        <strong>📊 Statistiche Affitti</strong><br>
         <small>Andamento degli affitti in base agli immobili attualmente in gestione.</small>
         <br>
-        <i class="fas fa-home"></i> Affitti totali annui: <span id="total-rentals">0</span> |
-        <i class="fas fa-building"></i> Unità disponibili: <span id="available-units">0</span> |
-        <i class="fas fa-users"></i> Media ospiti settimanali: <span id="weekly-tenants">0</span>
+        🏠 <b>Affitti totali annui:</b> <span id="total-rentals">0</span> |
+        🏢 <b>Unità disponibili:</b> <span id="available-units">0</span> |
+        👥 <b>Media ospiti settimanali:</b> <span id="weekly-tenants">0</span>
     `;
-    updateDisplay();
+
+    updateDisplay(); // Aggiorna i valori iniziali
 });
