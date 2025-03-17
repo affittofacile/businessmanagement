@@ -13,83 +13,63 @@ if (slides.length > 0) {
     setInterval(showSlides, 3000);
 }
 
-// Database in memoria connesso con Odoo.
-let rentalData = {
-    totalRentals: 1296,   // Correzione del calcolo basato su affittuari singoli (9 × 3 × 4 × 12)
-    availableUnits: 9,   // Valore fisso per le unità disponibili
-    weeklyTenants: 27    // Valore aggiornato per gli affittuari settimanali
-};
+// Database delle unità abitative gestibili manualmente
+let rentalUnits = [
+    { name: "Casa Sole", zone: "Centro", type: "Trivano", season: "Alta stagione", baseWeeklyRent: 350 },
+    { name: "Villa Mare", zone: "Lungomare", type: "Quadrivano", season: "Alta stagione", baseWeeklyRent: 500 },
+    { name: "Appartamento Verde", zone: "Collina", type: "Bivano", season: "Bassa stagione", baseWeeklyRent: 200 },
+    { name: "Attico Panorama", zone: "Centro", type: "Attico", season: "Normale", baseWeeklyRent: 400 },
+    { name: "Loft Urbano", zone: "Periferia", type: "Monolocale", season: "Bassa stagione", baseWeeklyRent: 180 },
+    { name: "Casa Relax", zone: "Campagna", type: "Trivano", season: "Normale", baseWeeklyRent: 250 },
+    { name: "Villetta Bianca", zone: "Lungomare", type: "Quadrivano", season: "Alta stagione", baseWeeklyRent: 550 },
+    { name: "Residenza Gialla", zone: "Centro", type: "Trivano", season: "Normale", baseWeeklyRent: 320 },
+    { name: "Casa del Porto", zone: "Porto", type: "Bivano", season: "Alta stagione", baseWeeklyRent: 280 },
+    { name: "Mini Loft", zone: "Centro storico", type: "Monolocale", season: "Bassa stagione", baseWeeklyRent: 160 },
+    { name: "Casetta Blu", zone: "Campagna", type: "Bivano", season: "Normale", baseWeeklyRent: 220 },
+    { name: "Dimora Elegante", zone: "Centro", type: "Quadrivano", season: "Alta stagione", baseWeeklyRent: 520 },
+    { name: "Villa delle Palme", zone: "Lungomare", type: "Trivano", season: "Normale", baseWeeklyRent: 400 },
+    { name: "Appartamento Moderno", zone: "Periferia", type: "Trivano", season: "Bassa stagione", baseWeeklyRent: 280 },
+    { name: "Casa Bianca", zone: "Centro storico", type: "Bivano", season: "Alta stagione", baseWeeklyRent: 300 }
+];
 
-// Carica i dati salvati nel localStorage (se presenti)
-if (localStorage.getItem("rentalData")) {
-    rentalData = JSON.parse(localStorage.getItem("rentalData"));
-} else {
-    // Salva i dati iniziali nel localStorage
-    localStorage.setItem("rentalData", JSON.stringify(rentalData));
+// Funzione per calcolare gli affitti totali
+function calculateRentals() {
+    let totalWeeklyTenants = 0;
+    rentalUnits.forEach(unit => {
+        let multiplier = unit.season === "Alta stagione" ? 1.3 : unit.season === "Bassa stagione" ? 0.8 : 1;
+        let weeklyTenants = Math.floor((unit.baseWeeklyRent * multiplier) / 50); // Media persone per unità
+        totalWeeklyTenants += weeklyTenants;
+    });
+
+    let totalRentals = totalWeeklyTenants * 4 * 12;
+    return { totalWeeklyTenants, totalRentals };
 }
 
-// Funzione per aggiornare i numeri in modo casuale
-function updateRentalData() {
-    // Numero medio di persone per unità (tra 1 e 5)
-    let avgPeoplePerUnit = Math.floor(Math.random() * 5) + 1;
-    
-    // Calcola gli affitti settimanali totali considerando le persone
-    rentalData.weeklyTenants = rentalData.availableUnits * avgPeoplePerUnit;
+// Caricamento dati e aggiornamento
+let rentalData = calculateRentals();
 
-    // Calcola gli affitti totali annui in modo coerente
-    rentalData.totalRentals = rentalData.weeklyTenants * 4 * 12;
-
-    // Salva i dati aggiornati nel localStorage
-    localStorage.setItem("rentalData", JSON.stringify(rentalData));
-}
-
-// Funzione per animare i numeri
-function animateValue(id, start, end, duration) {
-    let obj = document.getElementById(id);
-    if (!obj) {
-        console.error("Elemento non trovato:", id);
-        return;
-    }
-    let range = end - start;
-    let current = start;
-    let increment = range / (duration / 10);
-    let timer = setInterval(function () {
-        current += increment;
-        obj.textContent = Math.floor(current);
-        if (current >= end) {
-            obj.textContent = end;
-            clearInterval(timer);
-            obj.classList.add("highlight");
-            setTimeout(() => obj.classList.remove("highlight"), 1500);
-        }
-    }, 10);
-}
-
-// Aggiorna i numeri visualizzati
+// Funzione per aggiornare i valori a schermo
 function updateDisplay() {
-    animateValue("total-rentals", 0, rentalData.totalRentals, 2000);
-
-    // Aggiorna le unità disponibili (valore fisso)
-    const availableUnitsElement = document.getElementById("available-units");
-    if (availableUnitsElement) {
-        availableUnitsElement.textContent = rentalData.availableUnits;
-    } else {
-        console.error("Elemento 'available-units' non trovato!");
-    }
-
-    animateValue("weekly-tenants", 0, rentalData.weeklyTenants, 2000);
+    document.getElementById("total-rentals").textContent = rentalData.totalRentals;
+    document.getElementById("weekly-tenants").textContent = rentalData.totalWeeklyTenants;
+    document.getElementById("available-units").textContent = rentalUnits.length;
 }
 
-// Aggiorna i dati e la visualizzazione ogni 1 minuto
-setInterval(() => {
-    updateRentalData();
+// Modifica dinamica dei valori
+function updateManualValue(key, value) {
+    if (key === "totalRentals") {
+        rentalData.totalRentals = parseInt(value);
+        rentalData.totalWeeklyTenants = Math.floor(rentalData.totalRentals / (4 * 12));
+    } else if (key === "totalWeeklyTenants") {
+        rentalData.totalWeeklyTenants = parseInt(value);
+        rentalData.totalRentals = rentalData.totalWeeklyTenants * 4 * 12;
+    }
     updateDisplay();
-}, 60000); // 60.000 millisecondi = 1 minuto
+}
 
-// Inizializza la visualizzazione al caricamento della pagina
+// Aggiunge eventi per la modifica manuale
 document.addEventListener("DOMContentLoaded", function () {
-    console.log("DOM completamente caricato");
+    document.getElementById("total-rentals").addEventListener("input", (e) => updateManualValue("totalRentals", e.target.value));
+    document.getElementById("weekly-tenants").addEventListener("input", (e) => updateManualValue("totalWeeklyTenants", e.target.value));
     updateDisplay();
 });
-
-console.log("Script caricato correttamente!");
