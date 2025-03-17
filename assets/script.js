@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let statsBar = document.querySelector(".stats-bar p");
     statsBar.innerHTML = `
         <strong>Statistiche Affitti</strong><br>
-        <small>Questi dati mostrano l'andamento degli affitti in base alle unità disponibili.</small>
+        <small>Andamento degli affitti in base agli immobili attualmente in gestione.</small>
         <br>
         <i class="fas fa-home"></i> Affitti totali annui: <span id="total-rentals">0</span> |
         <i class="fas fa-building"></i> Unità disponibili: <span id="available-units">0</span> |
