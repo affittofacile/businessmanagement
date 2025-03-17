@@ -28,7 +28,7 @@ let rentalUnits = [
  //   { name: "Casetta Blu", zone: "Campagna", type: "Bivano", season: "Normale", baseWeeklyRent: 220 },
     { name: "Dimora Elegante", zone: "Centro", type: "Quadrivano", season: "Alta stagione", baseWeeklyRent: 520 },
 //    { name: "Villa delle Palme", zone: "Lungomare", type: "Trivano", season: "Normale", baseWeeklyRent: 400 },
-    { name: "Appartamento Moderno", zone: "Periferia", type: "Trivano", season: "Bassa stagione", baseWeeklyRent: 280 },
+ //   { name: "Appartamento Moderno", zone: "Periferia", type: "Trivano", season: "Bassa stagione", baseWeeklyRent: 280 },
     { name: "Casa Bianca", zone: "Centro storico", type: "Bivano", season: "Alta stagione", baseWeeklyRent: 300 }
 ];
 
