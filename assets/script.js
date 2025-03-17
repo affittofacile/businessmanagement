@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Genera il contenuto della barra delle statistiche con le icone
     statsBar.innerHTML = `
-        <strong>📊 Statistiche</strong><br>
+        <strong>📊 La nostra attività</strong><br>
         <small>Andamento degli affitti in base agli immobili attualmente in gestione.</small>
         <br>
         🏢 <b>Affitti totali annui:</b> <span id="total-rentals">0</span> |
