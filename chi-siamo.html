@@ -1,59 +1,19 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chi Siamo - AffittoFacile</title>
-    <link rel="stylesheet" href="assets/style.css">
-</head>
-<body>
-    <header>
-        <div class="logo">
-            <!-- Aggiungi qui il logo se necessario -->
-        </div>
-        <nav class="navbar">
-    <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="servizi.html">Servizi</a></li>
-        <li><a href="chi-siamo.html">Chi Siamo</a></li>
-        <li><a href="contatti.html">Contatti</a></li>
-    </ul>
-</nav>
-    </header>
+.about-container h1 {
+    font-size: 2.5em;
+    font-family: 'Playfair Display', serif;
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+}
 
-    <main>
-        <section class="about-section">
-            <div class="about-container">
-                <h1>Chi Siamo</h1>
-                <p>
-                    La ciurma di AffittoFacile è composta da professionisti che lavorano nel mondo del rental da tanto tempo. 
-                    La nostra rete ci consente di muoverci agevolmente in tutta Italia, garantendo un servizio di qualità 
-                    ovunque tu abbia bisogno di noi.
-                </p>
-                <img src="assets/images/team.jpg" alt="Il nostro team">
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Contatti</h3>
-                <p>Email: info@affittofacile.com</p>
-                <p>Telefono: +39 123 456 789</p>
-            </div>
-            <div class="footer-section">
-                <h3>Indirizzo</h3>
-                <p>Via Roma 123, 00100 Roma, Italia</p>
-            </div>
-            <div class="footer-section">
-                <h3>Seguici</h3>
-                <p><a href="#">Facebook</a> | <a href="#">LinkedIn</a></p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 AffittoFacile. Tutti i diritti riservati.</p>
-        </div>
-    </footer>
-</body>
-</html>
+.about-container h1::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #c29f62;
+    margin: 10px auto 0;
+}
