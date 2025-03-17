@@ -17,18 +17,18 @@ if (slides.length > 0) {
 let rentalUnits = [
     { name: "Casa Sole", zone: "Centro", type: "Trivano", season: "Alta stagione", baseWeeklyRent: 350 },
     { name: "Villa Mare", zone: "Lungomare", type: "Quadrivano", season: "Alta stagione", baseWeeklyRent: 500 },
-    { name: "Appartamento Verde", zone: "Collina", type: "Bivano", season: "Bassa stagione", baseWeeklyRent: 200 },
+//    { name: "Appartamento Verde", zone: "Collina", type: "Bivano", season: "Bassa stagione", baseWeeklyRent: 200 },
     { name: "Attico Panorama", zone: "Centro", type: "Attico", season: "Normale", baseWeeklyRent: 400 },
-    { name: "Loft Urbano", zone: "Periferia", type: "Monolocale", season: "Bassa stagione", baseWeeklyRent: 180 },
+//    { name: "Loft Urbano", zone: "Periferia", type: "Monolocale", season: "Bassa stagione", baseWeeklyRent: 180 },
     { name: "Casa Relax", zone: "Campagna", type: "Trivano", season: "Normale", baseWeeklyRent: 250 },
     { name: "Villetta Bianca", zone: "Lungomare", type: "Quadrivano", season: "Alta stagione", baseWeeklyRent: 550 },
-    { name: "Residenza Gialla", zone: "Centro", type: "Trivano", season: "Normale", baseWeeklyRent: 320 },
-    { name: "Casa del Porto", zone: "Porto", type: "Bivano", season: "Alta stagione", baseWeeklyRent: 280 },
-    { name: "Mini Loft", zone: "Centro storico", type: "Monolocale", season: "Bassa stagione", baseWeeklyRent: 160 },
+//    { name: "Residenza Gialla", zone: "Centro", type: "Trivano", season: "Normale", baseWeeklyRent: 320 },
+//    { name: "Casa del Porto", zone: "Porto", type: "Bivano", season: "Alta stagione", baseWeeklyRent: 280 },
+//    { name: "Mini Loft", zone: "Centro storico", type: "Monolocale", season: "Bassa stagione", baseWeeklyRent: 160 },
     { name: "Casetta Blu", zone: "Campagna", type: "Bivano", season: "Normale", baseWeeklyRent: 220 },
     { name: "Dimora Elegante", zone: "Centro", type: "Quadrivano", season: "Alta stagione", baseWeeklyRent: 520 },
-    { name: "Villa delle Palme", zone: "Lungomare", type: "Trivano", season: "Normale", baseWeeklyRent: 400 },
-    { name: "Appartamento Moderno", zone: "Periferia", type: "Trivano", season: "Bassa stagione", baseWeeklyRent: 280 },
+//    { name: "Villa delle Palme", zone: "Lungomare", type: "Trivano", season: "Normale", baseWeeklyRent: 400 },
+//    { name: "Appartamento Moderno", zone: "Periferia", type: "Trivano", season: "Bassa stagione", baseWeeklyRent: 280 },
     { name: "Casa Bianca", zone: "Centro storico", type: "Bivano", season: "Alta stagione", baseWeeklyRent: 300 }
 ];
 
