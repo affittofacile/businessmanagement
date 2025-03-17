@@ -76,6 +76,20 @@ header {
     max-width: 600px;
 }
 
+.site-title {
+    font-size: 4em;
+    font-family: 'Playfair Display', serif;
+    color: #333;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.home-icon {
+    font-size: 1.2em;
+    vertical-align: middle;
+}
+
 .highlight-text h2 {
     font-size: 2.5em;
     font-weight: bold;
@@ -180,8 +194,8 @@ header {
     padding: 60px 20px;
     text-align: center;
     background: #fff;
-    max-width: 1200px; /* Limita la larghezza massima */
-    margin: 0 auto; /* Centra la sezione */
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .services h2 {
@@ -190,9 +204,9 @@ header {
     color: #333;
     text-align: center;
     margin-bottom: 30px;
-    text-transform: uppercase; /* Trasforma il testo in maiuscolo */
-    letter-spacing: 2px; /* Aumenta lo spazio tra le lettere */
-    position: relative; /* Per aggiungere una linea decorativa sotto il titolo */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
 }
 
 .services h2::after {
@@ -200,8 +214,8 @@ header {
     display: block;
     width: 60px;
     height: 3px;
-    background-color: #c29f62; /* Colore della linea decorativa */
-    margin: 10px auto 0; /* Centra la linea e aggiunge spazio sopra */
+    background-color: #c29f62;
+    margin: 10px auto 0;
 }
 
 .service-list {
@@ -209,8 +223,8 @@ header {
     justify-content: center;
     flex-wrap: wrap;
     gap: 30px;
-    margin: 0 auto; /* Centra la lista dei servizi */
-    padding: 0 20px; /* Aggiunge spazio ai lati */
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 .service-item {
@@ -220,7 +234,7 @@ header {
     width: 30%;
     transition: transform 0.3s;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center; /* Centra il testo all'interno di ogni servizio */
+    text-align: center;
 }
 
 .service-item:hover {
@@ -246,58 +260,6 @@ header {
     line-height: 1.6;
 }
 
-.service-description {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f4f4f4;
-    border-radius: 8px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    margin-top: 40px;
-}
-
-.service-description p {
-    font-size: 1.2em;
-    color: #666;
-    line-height: 1.8;
-    margin-bottom: 20px;
-}
-
-.service-description strong {
-    color: #c29f62;
-}
-
-/* Chi Siamo Section */
-.about-section {
-    padding: 60px 20px;
-    text-align: center;
-    background: #fff;
-}
-
-.about-container {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.about-container h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-.about-container p {
-    font-size: 1.2em;
-    color: #666;
-    line-height: 1.8;
-}
-
-.about-container img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-top: 20px;
-}
-
 /* Contatti Section */
 .contact-section {
     padding: 60px 20px;
@@ -310,36 +272,30 @@ header {
     margin: 0 auto;
 }
 
-.contact-container h1 {
+.contact-container h2 {
     font-size: 2.5em;
-    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
     color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+.contact-container h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #c29f62;
+    margin: 10px auto 0;
 }
 
 .contact-container p {
     font-size: 1.2em;
     color: #666;
     margin-bottom: 30px;
-}
-
-.contact-info {
-    text-align: left;
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f4f4f4;
-    border-radius: 8px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.contact-info p {
-    margin-bottom: 10px;
-    font-size: 1.1em;
-    color: #333;
-}
-
-.contact-info strong {
-    color: #c29f62;
 }
 
 .contact-buttons {
@@ -454,14 +410,14 @@ footer {
     padding: 10px;
     font-size: 1.2em;
     font-weight: bold;
-    background-color: #f4f4f4; /* Sfondo chiaro per la barra */
-    border-radius: 8px; /* Bordi arrotondati */
-    margin: 20px auto; /* Spaziatura e centratura */
-    max-width: 800px; /* Limita la larghezza */
-    color: #333; /* Testo nero */
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    margin: 20px auto;
+    max-width: 800px;
+    color: #333;
 }
 
 .stats-bar span {
-    color: green; /* Colore verde per i numeri */
+    color: green;
     font-weight: bold;
 }
