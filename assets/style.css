@@ -260,6 +260,25 @@ header {
     line-height: 1.6;
 }
 
+/* Stile comune per il testo normale */
+.text-normal {
+    font-size: 1.2em;
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* Rimuovi le regole specifiche per i paragrafi nelle varie sezioni */
+.about-container p,
+.service-description p,
+.service-item p,
+.contact-container p {
+    font-size: inherit; /* Usa lo stile ereditato da .text-normal */
+    color: inherit; /* Usa lo stile ereditato da .text-normal */
+    line-height: inherit; /* Usa lo stile ereditato da .text-normal */
+    margin-bottom: inherit; /* Usa lo stile ereditato da .text-normal */
+}
+
 /* Stile per i titoli delle pagine secondarie */
 .page-title {
     font-size: 2.5em;
