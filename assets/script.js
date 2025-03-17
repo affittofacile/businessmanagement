@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <strong>Statistiche Affitti</strong><br>
         <small>Andamento degli affitti in base agli immobili attualmente in gestione.</small>
         <br>
-        <i class="fas fa-home"></i> Affitti totali annui (anno precedente): <span id="total-rentals">0</span> |
+        <i class="fas fa-home"></i> Affitti totali annui: <span id="total-rentals">0</span> |
         <i class="fas fa-building"></i> Unità disponibili: <span id="available-units">0</span> |
         <i class="fas fa-users"></i> Media ospiti settimanali: <span id="weekly-tenants">0</span>
     `;
