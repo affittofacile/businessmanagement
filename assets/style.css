@@ -260,6 +260,27 @@ header {
     line-height: 1.6;
 }
 
+/* Stile per i titoli delle pagine secondarie */
+.page-title {
+    font-size: 2.5em;
+    font-family: 'Playfair Display', serif;
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+.page-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #c29f62;
+    margin: 10px auto 0;
+}
+
 /* Contatti Section */
 .contact-section {
     padding: 60px 20px;
@@ -272,30 +293,30 @@ header {
     margin: 0 auto;
 }
 
-.contact-container h2 {
-    font-size: 2.5em;
-    font-family: 'Playfair Display', serif;
-    color: #333;
-    text-align: center;
-    margin-bottom: 30px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    position: relative;
-}
-
-.contact-container h2::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 3px;
-    background-color: #c29f62;
-    margin: 10px auto 0;
-}
-
 .contact-container p {
     font-size: 1.2em;
     color: #666;
     margin-bottom: 30px;
+}
+
+.contact-info {
+    text-align: left;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    color: #333;
+}
+
+.contact-info strong {
+    color: #c29f62;
 }
 
 .contact-buttons {
@@ -339,6 +360,31 @@ header {
 .whatsapp-button:hover {
     background-color: #128c7e;
     transform: scale(1.05);
+}
+
+/* Chi Siamo Section */
+.about-section {
+    padding: 60px 20px;
+    text-align: center;
+    background: #fff;
+}
+
+.about-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-container p {
+    font-size: 1.2em;
+    color: #666;
+    line-height: 1.8;
+}
+
+.about-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 20px;
 }
 
 /* Footer */
