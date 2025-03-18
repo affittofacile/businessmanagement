@@ -73,24 +73,66 @@ header {
     pointer-events: none; /* Disabilita interazioni dopo la scomparsa */
 }
 
-.intro-text {
+.intro-container {
+    background-color: rgba(255, 255, 255, 0.1); /* Sfondo semi-trasparente */
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 90%; /* Adatta il container allo schermo */
+    width: 600px; /* Larghezza massima */
     text-align: center;
+}
+
+.intro-text {
     color: white;
-    font-size: 2em;
+    font-size: 1.2em; /* Testo più piccolo */
 }
 
 .intro-text h2 {
-    font-size: 2.5em;
+    font-size: 1.8em; /* Titolo più piccolo */
     margin-bottom: 20px;
+}
+
+.intro-text img {
+    width: 100px; /* Dimensione dell'immagine */
+    height: auto;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out 0.5s forwards; /* Animazione per l'immagine */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .stats-bar {
     margin-top: 20px;
-    font-size: 1.2em;
+    font-size: 0.9em; /* Testo più piccolo */
 }
 
 .stats-bar strong {
     color: #c29f62;
+}
+
+.enter-button {
+    margin-top: 30px;
+    padding: 10px 20px;
+    background-color: #c29f62;
+    color: white;
+    font-size: 1em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.enter-button:hover {
+    background-color: #a7894d;
+    transform: scale(1.05);
 }
 
 /* Hero Section */
@@ -238,6 +280,27 @@ header {
     line-height: 1.6;
 }
 
+/* Stile per i titoli delle pagine secondarie */
+.page-title {
+    font-size: 2.5em;
+    font-family: 'Playfair Display', serif;
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+.page-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #c29f62;
+    margin: 10px auto 0;
+}
+
 /* Contatti Section */
 .contact-section {
     padding: 60px 20px;
@@ -381,5 +444,23 @@ footer {
 
     .footer-content {
         flex-direction: column;
+    }
+
+    .intro-container {
+        padding: 20px;
+        width: 90%; /* Adatta il container ai dispositivi mobili */
+    }
+
+    .intro-text h2 {
+        font-size: 1.5em; /* Titolo più piccolo su mobile */
+    }
+
+    .intro-text {
+        font-size: 1em; /* Testo più piccolo su mobile */
+    }
+
+    .enter-button {
+        padding: 8px 16px;
+        font-size: 0.9em;
     }
 }
