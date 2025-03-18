@@ -358,7 +358,7 @@ header {
 
 /* Stile per la sezione Contatti */
 .contact-section {
-    padding: 60px 20px;
+    padding: 60px 20px; /* Aggiungi padding per distanziare dal menu */
     text-align: center;
     background: #fff;
 }
@@ -366,12 +366,14 @@ header {
 .contact-container {
     max-width: 800px;
     margin: 0 auto;
+    padding: 20px; /* Aggiungi padding per distanziare i contenuti dai bordi */
 }
 
 .contact-container .text-normal {
     font-size: 1.2em;
     color: #666;
     margin-bottom: 30px;
+    text-align: center; /* Centra il testo */
 }
 
 .contact-info {
@@ -406,7 +408,8 @@ header {
     display: flex;
     justify-content: center;
     gap: 20px;
-    margin-top: 30px;
+    margin-top: 30px; /* Aggiungi margine superiore per distanziare dai contenuti sopra */
+    margin-bottom: 30px; /* Aggiungi margine inferiore per distanziare dal footer */
 }
 
 .contact-button {
