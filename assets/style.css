@@ -57,6 +57,33 @@ header {
     color: #c29f62; /* Colore al passaggio del mouse */
 }
 
+/* Stile per il testo giustificato */
+.justified-text {
+    text-align: justify; /* Giustifica il testo */
+    font-size: 1.2em;
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    padding: 0 20px; /* Aggiungi padding per evitare che il testo tocchi i bordi */
+}
+
+/* Stile per l'immagine inline (all'interno del testo) */
+.inline-image {
+    width: 250px; /* Riduci la larghezza dell'immagine */
+    height: auto; /* Mantiene le proporzioni */
+    float: left; /* Posiziona l'immagine a sinistra */
+    margin: 0 20px 20px 0; /* Aggiunge margine a destra e sotto */
+    border-radius: 8px; /* Bordi arrotondati */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Ombreggiatura */
+}
+
+/* Clearfix per evitare che il testo si sovrapponga */
+.about-container::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
 /* Stile per i testi all'interno dei container */
 .section-text {
     font-size: 1.1em; /* Dimensione del testo */
