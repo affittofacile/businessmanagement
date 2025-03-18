@@ -1,11 +1,21 @@
-// Gestione slideshow
+// Gestione slideshow con testo che appare ogni 3 slide
 let slides = document.querySelectorAll(".slide");
+let introSlides = document.querySelectorAll(".intro-text");
 let slideIndex = 0;
+let totalSlides = slides.length;
 
 function showSlides() {
     slides.forEach(slide => slide.classList.remove("active"));
     slides[slideIndex].classList.add("active");
-    slideIndex = (slideIndex + 1) % slides.length;
+
+    // Mostra il testo introduttivo ogni 3 slide
+    if (slideIndex % 3 === 0) {
+        introSlides.forEach(text => text.style.display = "block");
+    } else {
+        introSlides.forEach(text => text.style.display = "none");
+    }
+
+    slideIndex = (slideIndex + 1) % totalSlides;
 }
 
 if (slides.length > 0) {
@@ -17,18 +27,11 @@ if (slides.length > 0) {
 let rentalUnits = [
     { name: "Casa Sole", zone: "Centro", type: "Trivano", season: "Alta stagione", baseWeeklyRent: 350 },
     { name: "Villa Mare", zone: "Lungomare", type: "Quadrivano", season: "Alta stagione", baseWeeklyRent: 500 },
-//    { name: "Appartamento Verde", zone: "Collina", type: "Bivano", season: "Bassa stagione", baseWeeklyRent: 200 },
     { name: "Attico Panorama", zone: "Centro", type: "Attico", season: "Normale", baseWeeklyRent: 400 },
-//    { name: "Loft Urbano", zone: "Periferia", type: "Monolocale", season: "Bassa stagione", baseWeeklyRent: 180 },
     { name: "Casa Relax", zone: "Campagna", type: "Trivano", season: "Normale", baseWeeklyRent: 250 },
     { name: "Villetta Bianca", zone: "Lungomare", type: "Quadrivano", season: "Alta stagione", baseWeeklyRent: 550 },
-//    { name: "Residenza Gialla", zone: "Centro", type: "Trivano", season: "Normale", baseWeeklyRent: 320 },
-//    { name: "Casa del Porto", zone: "Porto", type: "Bivano", season: "Alta stagione", baseWeeklyRent: 280 },
-//    { name: "Mini Loft", zone: "Centro storico", type: "Monolocale", season: "Bassa stagione", baseWeeklyRent: 160 },
     { name: "Casetta Blu", zone: "Campagna", type: "Bivano", season: "Normale", baseWeeklyRent: 220 },
     { name: "Dimora Elegante", zone: "Centro", type: "Quadrivano", season: "Alta stagione", baseWeeklyRent: 520 },
-//    { name: "Villa delle Palme", zone: "Lungomare", type: "Trivano", season: "Normale", baseWeeklyRent: 400 },
-//    { name: "Appartamento Moderno", zone: "Periferia", type: "Trivano", season: "Bassa stagione", baseWeeklyRent: 280 },
     { name: "Casa Bianca", zone: "Centro storico", type: "Bivano", season: "Alta stagione", baseWeeklyRent: 300 }
 ];
 
@@ -37,7 +40,7 @@ function calculateRentals() {
     let totalWeeklyTenants = 0;
     rentalUnits.forEach(unit => {
         let multiplier = unit.season === "Alta stagione" ? 1.3 : unit.season === "Bassa stagione" ? 0.8 : 1;
-        let weeklyTenants = Math.floor((unit.baseWeeklyRent * multiplier) / 50); // Media persone per unità
+        let weeklyTenants = Math.floor((unit.baseWeeklyRent * multiplier) / 50);
         totalWeeklyTenants += weeklyTenants;
     });
 
@@ -78,7 +81,6 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
     let statsBar = document.querySelector(".stats-bar p");
 
-    // Genera il contenuto della barra delle statistiche con le icone
     statsBar.innerHTML = `
         <strong>📊 La nostra attività cresce di giorno in giorno, con la soddisfazione dei nostri clienti!</strong><br>
         <small>Andamento degli affitti in base agli immobili attualmente in gestione.</small>
@@ -88,5 +90,5 @@ document.addEventListener("DOMContentLoaded", function () {
         👥 <b>Media ospiti settimanali:</b> <span id="weekly-tenants">0</span>
     `;
 
-    updateDisplay(); // Aggiorna i valori iniziali
+    updateDisplay();
 });
