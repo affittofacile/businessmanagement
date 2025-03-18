@@ -1,6 +1,6 @@
 // Gestione slideshow con testo che appare ogni 3 slide
 let slides = document.querySelectorAll(".slide");
-let introSlides = document.querySelectorAll(".intro-text");
+let introText = document.querySelector(".intro-text");
 let slideIndex = 0;
 let totalSlides = slides.length;
 
@@ -10,9 +10,9 @@ function showSlides() {
 
     // Mostra il testo introduttivo ogni 3 slide
     if (slideIndex % 3 === 0) {
-        introSlides.forEach(text => text.style.display = "block");
+        introText.style.display = "block";
     } else {
-        introSlides.forEach(text => text.style.display = "none");
+        introText.style.display = "none";
     }
 
     slideIndex = (slideIndex + 1) % totalSlides;
@@ -74,21 +74,5 @@ function updateManualValue(key, value) {
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("total-rentals").addEventListener("input", (e) => updateManualValue("totalRentals", e.target.value));
     document.getElementById("weekly-tenants").addEventListener("input", (e) => updateManualValue("totalWeeklyTenants", e.target.value));
-    updateDisplay();
-});
-
-// Aggiornamento HTML con titolo, descrizione e icone
-document.addEventListener("DOMContentLoaded", function () {
-    let statsBar = document.querySelector(".stats-bar p");
-
-    statsBar.innerHTML = `
-        <strong>📊 La nostra attività cresce di giorno in giorno, con la soddisfazione dei nostri clienti!</strong><br>
-        <small>Andamento degli affitti in base agli immobili attualmente in gestione.</small>
-        <br>
-        🏢 <b>Affitti totali annui:</b> <span id="total-rentals">0</span> |
-        🏠 <b>Unità disponibili:</b> <span id="available-units">0</span> |
-        👥 <b>Media ospiti settimanali:</b> <span id="weekly-tenants">0</span>
-    `;
-
     updateDisplay();
 });
