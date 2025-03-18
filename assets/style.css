@@ -52,67 +52,45 @@ header {
     color: #c29f62; /* Colore al passaggio del mouse */
 }
 
-/* Sezione evidenziata */
-.highlight-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f4f4f4;
-    padding: 100px 20px;
-    min-height: 100vh;
-}
-
-.highlight-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 1200px;
+/* Messaggio iniziale */
+.initial-message {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    gap: 40px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Sfondo scuro semi-trasparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Sopra tutto */
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
 }
 
-.highlight-text {
-    text-align: left;
-    max-width: 600px;
+.initial-message.fade-out {
+    opacity: 0;
+    pointer-events: none; /* Disabilita interazioni dopo la scomparsa */
 }
 
-.site-title {
-    font-size: 4em;
-    font-family: 'Playfair Display', serif;
-    color: #333;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+.intro-text {
+    text-align: center;
+    color: white;
+    font-size: 2em;
 }
 
-.home-icon {
-    font-size: 1.2em;
-    vertical-align: middle;
-}
-
-.highlight-text h2 {
+.intro-text h2 {
     font-size: 2.5em;
-    font-weight: bold;
-    line-height: 1.4;
     margin-bottom: 20px;
-    color: #333;
 }
 
-.highlight-text .underline {
-    text-decoration: underline;
-    text-decoration-color: #c29f62;
-    text-decoration-thickness: 3px;
+.stats-bar {
+    margin-top: 20px;
+    font-size: 1.2em;
 }
 
-.highlight-icon img {
-    width: 150px;
-    height: auto;
-    opacity: 0.8;
-    transition: transform 0.3s ease-in-out;
-}
-
-.highlight-icon img:hover {
-    transform: scale(1.1);
+.stats-bar strong {
+    color: #c29f62;
 }
 
 /* Hero Section */
@@ -260,46 +238,6 @@ header {
     line-height: 1.6;
 }
 
-/* Stile comune per il testo normale */
-.text-normal {
-    font-size: 1.2em;
-    color: #666;
-    line-height: 1.8;
-    margin-bottom: 20px;
-}
-
-/* Rimuovi le regole specifiche per i paragrafi nelle varie sezioni */
-.about-container p,
-.service-description p,
-.service-item p,
-.contact-container p {
-    font-size: inherit; /* Usa lo stile ereditato da .text-normal */
-    color: inherit; /* Usa lo stile ereditato da .text-normal */
-    line-height: inherit; /* Usa lo stile ereditato da .text-normal */
-    margin-bottom: inherit; /* Usa lo stile ereditato da .text-normal */
-}
-
-/* Stile per i titoli delle pagine secondarie */
-.page-title {
-    font-size: 2.5em;
-    font-family: 'Playfair Display', serif;
-    color: #333;
-    text-align: center;
-    margin-bottom: 30px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    position: relative;
-}
-
-.page-title::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 3px;
-    background-color: #c29f62;
-    margin: 10px auto 0;
-}
-
 /* Contatti Section */
 .contact-section {
     padding: 60px 20px;
@@ -316,26 +254,6 @@ header {
     font-size: 1.2em;
     color: #666;
     margin-bottom: 30px;
-}
-
-.contact-info {
-    text-align: left;
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f4f4f4;
-    border-radius: 8px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.contact-info p {
-    margin-bottom: 10px;
-    font-size: 1.1em;
-    color: #333;
-}
-
-.contact-info strong {
-    color: #c29f62;
 }
 
 .contact-buttons {
@@ -464,53 +382,4 @@ footer {
     .footer-content {
         flex-direction: column;
     }
-}
-
-/* Stats Bar */
-.stats-bar {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    text-align: center;
-    padding: 10px;
-    font-size: 1.2em;
-    font-weight: bold;
-    background-color: #f4f4f4;
-    border-radius: 8px;
-    margin: 20px auto;
-    max-width: 800px;
-    color: #333;
-}
-
-.stats-bar span {
-    color: green;
-    font-weight: bold;
-}
-
-/* Messaggio Promozionale */
-.intro-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-size: 2em;
-    text-align: center;
-    opacity: 1;
-    transition: opacity 1.5s ease-in-out;
-    z-index: 3;
-}
-
-.intro-text h2 {
-    font-size: 2.5em;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
-.intro-text .stats-bar {
-    margin-top: 20px;
-}
-
-.fade-out {
-    opacity: 0;
 }
