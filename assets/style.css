@@ -67,6 +67,24 @@ header {
     padding: 0 20px; /* Aggiungi padding per evitare che il testo tocchi i bordi */
 }
 
+.logo h1 {
+    font-size: 2.5em;
+    font-family: 'Playfair Display', serif;
+    color: #333;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.logo h3 {
+    font-size: 1.5em;
+    font-family: 'Montserrat', sans-serif;
+    color: #c29f62; /* Colore oro per enfatizzare */
+    font-weight: bold;
+    margin-top: 5px;
+    text-align: center;
+}
+
 /* Stile per l'immagine inline (all'interno del testo) */
 .inline-image {
     width: 250px; /* Riduci la larghezza dell'immagine */
