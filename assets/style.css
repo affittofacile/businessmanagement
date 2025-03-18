@@ -57,6 +57,15 @@ header {
     color: #c29f62; /* Colore al passaggio del mouse */
 }
 
+/* Stile per i testi all'interno dei container */
+.section-text {
+    font-size: 1.1em; /* Dimensione del testo */
+    color: #666; /* Colore del testo */
+    line-height: 1.6; /* Altezza della linea */
+    text-align: left; /* Allineamento a sinistra (evita la giustificazione) */
+    margin-bottom: 20px; /* Spaziatura inferiore */
+    padding: 0 10px; /* Padding laterale per evitare che il testo tocchi i bordi */
+}
 /* Stile per l'immagine decorativa */
 .decorative-image {
     width: 150px; /* Imposta la larghezza desiderata */
