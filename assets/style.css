@@ -486,3 +486,19 @@ footer {
     color: green;
     font-weight: bold;
 }
+
+.initial-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 2em;
+    text-align: center;
+    opacity: 1;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.fade-out {
+    opacity: 0;
+}
