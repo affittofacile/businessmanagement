@@ -180,29 +180,32 @@ header {
     text-align: center;
     color: white;
     background-color: rgba(0, 0, 0, 0.7);
-    padding: 20px;
+    padding: 40px; /* Aumentato il padding */
     border-radius: 8px;
+    max-width: 800px; /* Limita la larghezza del contenuto */
+    margin: 0 auto;
 }
 
 .hero h1 {
     font-size: 3.5em;
     font-weight: 700;
-    margin-bottom: 10px;
+    margin-bottom: 20px; /* Aumentato il margine inferiore */
 }
 
 .hero p {
     font-size: 1.4em;
-    margin-bottom: 20px;
+    margin-bottom: 30px; /* Aumentato il margine inferiore */
 }
 
 .cta-button {
     background: #c29f62;
     color: #fff;
-    padding: 12px 25px;
+    padding: 15px 30px; /* Aumentato il padding */
     text-decoration: none;
     font-size: 1.2em;
     border-radius: 8px;
     transition: background 0.3s;
+    margin-top: 20px; /* Aggiunto margine superiore */
 }
 
 .cta-button:hover {
@@ -278,6 +281,14 @@ header {
     font-size: 1.1em;
     color: #666;
     line-height: 1.6;
+}
+
+/* Stile per il testo normale */
+.text-normal {
+    font-size: 1.2em;
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 20px;
 }
 
 /* Stile per i titoli delle pagine secondarie */
