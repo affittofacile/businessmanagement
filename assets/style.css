@@ -83,7 +83,7 @@ header {
     padding: 30px;
     border-radius: 10px;
     max-width: 90%; /* Adatta il container allo schermo */
-    width: 600px; /* Larghezza massima */
+    width: 700px; /* Allargato il container */
     text-align: center;
 }
 
@@ -95,6 +95,13 @@ header {
 .intro-text h2 {
     font-size: 1.8em; /* Titolo più piccolo */
     margin-bottom: 20px;
+}
+
+.intro-text h2 .highlight {
+    color: #c29f62; /* Colore oro per le parole importanti */
+    text-decoration: underline;
+    text-decoration-color: #c29f62;
+    text-decoration-thickness: 2px;
 }
 
 .intro-text img {
@@ -120,7 +127,12 @@ header {
 }
 
 .stats-bar strong {
-    color: #c29f62;
+    color: #c29f62; /* Colore oro per il testo forte */
+}
+
+.stats-bar span {
+    color: green; /* Colore verde per i numeri */
+    font-weight: bold;
 }
 
 .enter-button {
