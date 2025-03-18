@@ -1,19 +1,32 @@
 // Gestione del messaggio iniziale
 document.addEventListener("DOMContentLoaded", function () {
     const initialMessage = document.querySelector(".initial-message");
+    const enterButton = document.querySelector(".enter-button");
 
     // Mostra il messaggio iniziale
     initialMessage.style.display = "flex";
 
-    // Dopo 3 secondi, applica la classe per farlo scomparire
-    setTimeout(() => {
+    // Chiudi il messaggio quando si clicca sul pulsante "Entra" o su qualsiasi area
+    initialMessage.addEventListener("click", () => {
         initialMessage.classList.add("fade-out");
 
         // Rimuovi il messaggio dal DOM dopo l'animazione
         initialMessage.addEventListener("transitionend", () => {
             initialMessage.style.display = "none";
         });
-    }, 3000); // 3 secondi
+    });
+
+    // Chiudi automaticamente il messaggio dopo 7 secondi
+    setTimeout(() => {
+        if (!initialMessage.classList.contains("fade-out")) {
+            initialMessage.classList.add("fade-out");
+
+            // Rimuovi il messaggio dal DOM dopo l'animazione
+            initialMessage.addEventListener("transitionend", () => {
+                initialMessage.style.display = "none";
+            });
+        }
+    }, 7000); // 7 secondi
 });
 
 // Gestione dello slideshow
