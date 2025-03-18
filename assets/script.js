@@ -1,6 +1,23 @@
-// Gestione slideshow con testo che appare ogni 3 slide
+// Gestione del messaggio iniziale
+document.addEventListener("DOMContentLoaded", function () {
+    const initialMessage = document.querySelector(".initial-message");
+
+    // Mostra il messaggio iniziale
+    initialMessage.style.display = "flex";
+
+    // Dopo 3 secondi, applica la classe per farlo scomparire
+    setTimeout(() => {
+        initialMessage.classList.add("fade-out");
+
+        // Rimuovi il messaggio dal DOM dopo l'animazione
+        initialMessage.addEventListener("transitionend", () => {
+            initialMessage.style.display = "none";
+        });
+    }, 3000); // 3 secondi
+});
+
+// Gestione dello slideshow
 let slides = document.querySelectorAll(".slide");
-let introText = document.querySelector(".intro-text");
 let slideIndex = 0;
 let totalSlides = slides.length;
 
@@ -8,22 +25,15 @@ function showSlides() {
     slides.forEach(slide => slide.classList.remove("active"));
     slides[slideIndex].classList.add("active");
 
-    // Mostra il testo introduttivo ogni 3 slide
-    if (slideIndex % 3 === 0) {
-        introText.style.display = "block";
-    } else {
-        introText.style.display = "none";
-    }
-
     slideIndex = (slideIndex + 1) % totalSlides;
 }
 
 if (slides.length > 0) {
     slides[0].classList.add("active");
-    setInterval(showSlides, 3000);
+    setInterval(showSlides, 5000); // Cambia slide ogni 5 secondi
 }
 
-// Database delle unità abitative gestibili manualmente
+// Database e logica per i numeri statistici
 let rentalUnits = [
     { name: "Casa Sole", zone: "Centro", type: "Trivano", season: "Alta stagione", baseWeeklyRent: 350 },
     { name: "Villa Mare", zone: "Lungomare", type: "Quadrivano", season: "Alta stagione", baseWeeklyRent: 500 },
@@ -35,7 +45,6 @@ let rentalUnits = [
     { name: "Casa Bianca", zone: "Centro storico", type: "Bivano", season: "Alta stagione", baseWeeklyRent: 300 }
 ];
 
-// Funzione per calcolare il numero totale di ospiti settimanali
 function calculateRentals() {
     let totalWeeklyTenants = 0;
     rentalUnits.forEach(unit => {
@@ -48,31 +57,12 @@ function calculateRentals() {
     return { totalWeeklyTenants, totalRentals };
 }
 
-// Caricamento dati e aggiornamento
 let rentalData = calculateRentals();
 
-// Funzione per aggiornare i valori a schermo
 function updateDisplay() {
     document.getElementById("total-rentals").textContent = rentalData.totalRentals;
     document.getElementById("weekly-tenants").textContent = rentalData.totalWeeklyTenants;
     document.getElementById("available-units").textContent = rentalUnits.length;
 }
 
-// Modifica dinamica dei valori
-function updateManualValue(key, value) {
-    if (key === "totalRentals") {
-        rentalData.totalRentals = parseInt(value);
-        rentalData.totalWeeklyTenants = Math.floor(rentalData.totalRentals / (4 * 12));
-    } else if (key === "totalWeeklyTenants") {
-        rentalData.totalWeeklyTenants = parseInt(value);
-        rentalData.totalRentals = rentalData.totalWeeklyTenants * 4 * 12;
-    }
-    updateDisplay();
-}
-
-// Aggiunge eventi per la modifica manuale
-document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("total-rentals").addEventListener("input", (e) => updateManualValue("totalRentals", e.target.value));
-    document.getElementById("weekly-tenants").addEventListener("input", (e) => updateManualValue("totalWeeklyTenants", e.target.value));
-    updateDisplay();
-});
+updateDisplay();
