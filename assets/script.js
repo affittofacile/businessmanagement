@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 initialMessage.style.display = "none";
             });
         }
-    }, 15000); // 7 secondi
+    }, 20000); // 7 secondi
 });
 
 // Gestione dello slideshow
