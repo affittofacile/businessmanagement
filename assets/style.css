@@ -57,6 +57,14 @@ header {
     color: #c29f62; /* Colore al passaggio del mouse */
 }
 
+/* Stile per l'immagine decorativa */
+.decorative-image {
+    width: 150px; /* Imposta la larghezza desiderata */
+    height: auto; /* Mantiene le proporzioni */
+    display: block; /* Rende l'immagine un blocco */
+    margin: 0 auto 20px; /* Centra l'immagine e aggiunge spazio sotto */
+}
+    
 /* Messaggio iniziale */
 .initial-message {
     position: fixed;
@@ -240,12 +248,7 @@ header {
 
 /* Services Section */
 
-/* Stile per l'immagine decorativa nella sezione servizi */
-.services .decorative-image {
-    width: 150px; /* Imposta la larghezza desiderata */
-    height: auto; /* Mantiene le proporzioni */
-    display: block; /* Rende l'immagine un blocco */
-    margin: 0 auto 20px; /* Centra l'immagine e aggiunge spazio sotto */
+
 }
 .services {
     padding: 60px 20px;
@@ -409,13 +412,7 @@ header {
 
 /* Chi Siamo Section */
 
-/* Stile per l'immagine decorativa nella sezione servizi */
-.about .decorative-image {
-    width: 150px; /* Imposta la larghezza desiderata */
-    height: auto; /* Mantiene le proporzioni */
-    display: block; /* Rende l'immagine un blocco */
-    margin: 0 auto 20px; /* Centra l'immagine e aggiunge spazio sotto */
-    }
+
 .about-section {
     padding: 60px 20px;
     text-align: center;
