@@ -412,6 +412,31 @@ header {
 
 /* Chi Siamo Section */
 
+/* Stile per l'immagine decorativa nella sezione Chi Siamo */
+.about-section .decorative-image {
+    width: 150px; /* Imposta la larghezza desiderata */
+    height: auto; /* Mantiene le proporzioni */
+    display: block; /* Rende l'immagine un blocco */
+    margin: 0 auto 20px; /* Centra l'immagine e aggiunge spazio sotto */
+}
+
+/* Stile per l'immagine inline (all'interno del testo) */
+.inline-image {
+    width: 250px; /* Riduci la larghezza dell'immagine */
+    height: auto; /* Mantiene le proporzioni */
+    float: left; /* Posiziona l'immagine a sinistra */
+    margin: 0 20px 20px 0; /* Aggiunge margine a destra e sotto */
+    border-radius: 8px; /* Bordi arrotondati */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Ombreggiatura */
+}
+
+/* Clearfix per evitare che il testo si sovrapponga */
+.about-container::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
 
 .about-section {
     padding: 60px 20px;
