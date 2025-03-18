@@ -247,9 +247,6 @@ header {
 }
 
 /* Services Section */
-
-
-}
 .services {
     padding: 60px 20px;
     text-align: center;
@@ -326,8 +323,9 @@ header {
     color: #666;
     line-height: 1.8;
     margin-bottom: 20px;
+    padding: 0 20px; /* Aggiungi padding per evitare che il testo tocchi i bordi */
+    text-align: justify; /* Giustifica il testo */
 }
-
 /* Stile per i titoli delle pagine secondarie */
 .page-title {
     font-size: 2.5em;
